@@ -1,0 +1,107 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block title %}About | Pratik Adhikari{% endblock %}
+
+{% block content %}
+
+<!-- About Header -->
+<section class="py-20 text-center">
+    <h3 class="text-4xl font-bold">About <span class="text-purple-500">Me</span></h3>
+    <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Aspiring Computer Science Student passionate about exploring innovative technologies and
+        building practical solutions to real-world challenges.
+    </p>
+</section>
+
+<!-- Introduction -->
+<section class="container mx-auto px-6 py-12 grid md:grid-cols-2 gap-12 items-center">
+    <!-- Video Section -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+        <div class="relative">
+            <img src="{% static 'images/profile-photo.jpg' %}" alt="Introduction Video" class="rounded-lg opacity-90" />
+            <button class="absolute inset-0 flex items-center justify-center">
+                <span class="bg-white bg-opacity-70 px-4 py-2 rounded-lg shadow">▶ Watch Introduction</span>
+            </button>
+        </div>
+        <div class="mt-4">
+            <h2 class="text-lg font-semibold">Personal Introduction</h2>
+            <p class="text-gray-600 dark:text-gray-400">
+                Get to know me better through this personal video where I share my journey, passion for
+                technology, and vision for the future.
+            </p>
+        </div>
+    </div>
+
+    <!-- Bio Section -->
+    <div>
+        <div class="flex items-center gap-4 mb-6">
+            <img src="{% static 'images/profile-photo.jpg' %}" alt="Pratik Adhikari"
+                class="w-20 h-20 rounded-full border-4 border-purple-500" />
+            <div>
+                <h2 class="text-2xl font-bold text-purple-500">Pratik Adhikari</h2>
+                <p class="text-gray-600 dark:text-gray-400">Aspiring Computer Science Student | AI & Technology
+                    Enthusiast</p>
+            </div>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+            I am a recent high school graduate with a strong interest in artificial intelligence, robotics, and software
+            development. My passion for technology began with a curiosity about how intelligent systems can solve
+            real-world problems and improve everyday life.
+        </p>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+            I am excited to continue expanding my
+            knowledge, developing innovative solutions, and contributing to technologies that create meaningful impact.
+        </p>
+        <div class="flex gap-4">
+            <a href="{% static 'resume.pdf' %}" class="px-6 py-3 bg-purple-600 text-white rounded-lg shadow">Download
+                Resume</a>
+            <a href="{% url 'certificates' %}" class="px-6 py-3 border rounded-lg flex items-center gap-2">View
+                Certificates</a>
+        </div>
+    </div>
+</section>
+
+<!-- Skills & Education -->
+<section class="container mx-auto px-6 py-12 grid md:grid-cols-2 gap-8">
+    <!-- Skills -->
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+        <h3 class="text-xl font-semibold text-purple-500 mb-4">Technical Expertise</h3>
+        <div class="flex flex-wrap gap-3">
+            <span
+                class="px-4 py-2 bg-purple-100 dark:bg-gray-700 text-purple-600 dark:text-purple-300 rounded-full">Python</span>
+            <span
+                class="px-4 py-2 bg-purple-100 dark:bg-gray-700 text-purple-600 dark:text-purple-300 rounded-full">Django</span>
+            <span
+                class="px-4 py-2 bg-purple-100 dark:bg-gray-700 text-purple-600 dark:text-purple-300 rounded-full">C</span>
+            <span
+                class="px-4 py-2 bg-purple-100 dark:bg-gray-700 text-purple-600 dark:text-purple-300 rounded-full">C++</span>
+            <span
+                class="px-4 py-2 bg-purple-100 dark:bg-gray-700 text-purple-600 dark:text-purple-300 rounded-full">HTML</span>
+            <span
+                class="px-4 py-2 bg-purple-100 dark:bg-gray-700 text-purple-600 dark:text-purple-300 rounded-full">Embedded System</span>
+            <span
+                class="px-4 py-2 bg-purple-100 dark:bg-gray-700 text-purple-600 dark:text-purple-300 rounded-full">SQL</span>
+            <span
+                class="px-4 py-2 bg-purple-100 dark:bg-gray-700 text-purple-600 dark:text-purple-300 rounded-full">Git</span>
+        </div>
+    </div>
+
+    <!-- Education -->
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+        <h3 class="text-xl font-semibold text-purple-500 mb-4">Education</h3>
+        <ul class="space-y-4">
+            <li>
+                <h4 class="font-semibold">SOS Hermann Gmeiner Secondary School</h4>
+                <p class="text-gray-600 dark:text-gray-400">+2 (Batch of 2082)</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Obtained: 3.82/4</p>
+            </li>
+            <li>
+                <h4 class="font-semibold">West Point Children Academy </h4>
+                <p class="text-gray-600 dark:text-gray-400">SEE (Batch of 2080)</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Obtained: 3.75/4</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+{% endblock %}

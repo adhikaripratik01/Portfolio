@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Pratik Adhikari | Portfolio{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+</head>
+<script>
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+    }
+</script>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center py-4 px-8 shadow-sm bg-white dark:bg-gray-900">
+        <h1 class="text-2xl font-bold text-purple-600">Pratik <span class="text-gray-700 dark:text-gray-300">Adhikari</span></h1>
+        <ul class="flex gap-6 items-center">
+            <li><a href="{% url 'home' %}"class="hover:text-purple-500">Home</a></li>
+            <li><a href="{% url 'about' %}" class="hover:text-purple-500">About</a></li>
+            <li> <a href="{% url 'projects' %}" class="hover:text-purple-500">Projects</a></li>
+            <li><a href="{% url 'certificates' %}" class="hover:text-purple-500">Certificates</a></li>
+            <li><a href="{% url 'contact' %}" class="hover:text-purple-500">Contact</a></li>
+
+            <!-- Theme toggle button -->
+            <li>
+                <button id="theme-btn" class="focus:outline-none w-10 h-10">
+                    <!-- Moon SVG -->
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-gray-800 dark:hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                    </svg>
+                    <!-- Sun SVG -->
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-yellow-400 hidden dark:block">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M6.05 17.95l-1.414 1.414M18.364 18.364l-1.414-1.414M6.05 6.05L4.636 7.464M12 7a5 5 0 100 10 5 5 0 000-10z" />
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 py-6 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; {{ now.year }} Pratik Adhikari. All rights reserved.</p>
+            <div class="mt-2 flex justify-center gap-4">
+                <a href="https://github.com/adhikaripratik01" target="_blank" class="hover:text-purple-500">GitHub</a>
+                <a href="https://www.linkedin.com/in/pratikadhikari01/" target="_blank" class="hover:text-purple-500">LinkedIn</a>
+                <a href="mailto:pratikadhikari322@gmail.com" class="hover:text-purple-500">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme toggle JS -->
+    <script>
+        const btn = document.getElementById('theme-btn');
+        const moon = document.getElementById('moon-icon');
+        const sun = document.getElementById('sun-icon');
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            if(document.documentElement.classList.contains('dark')) {
+                moon.classList.add('hidden');
+                sun.classList.remove('hidden');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                sun.classList.add('hidden');
+                moon.classList.remove('hidden');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if(savedTheme === 'dark') document.documentElement.classList.add('dark');
+            
+            if(document.documentElement.classList.contains('dark')) {
+                moon.classList.add('hidden');
+                sun.classList.remove('hidden');
+            } else {
+                sun.classList.add('hidden');
+                moon.classList.remove('hidden');
+            }
+        });
+
+        btn.addEventListener('click', toggleTheme);
+    </script>
+</body>
+</html>
+

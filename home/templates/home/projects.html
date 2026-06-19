@@ -1,0 +1,104 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title %}Projects | Pratik Adhikari{% endblock %}
+
+{% block content %}
+<!-- Projects Section -->
+<section id="projects" class="py-16 container mx-auto px-6">
+    <!-- Heading -->
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">
+            My <span class="text-purple-500">Projects</span>
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            A collection of projects that showcase my passion for creating innovative solutions
+            using cutting-edge technologies and creative problem-solving approaches.
+        </p>
+    </div>
+
+    <!-- Featured Projects -->
+    <h3 class="text-2xl font-semibold text-center mb-8">Featured Projects</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Project Card 1 -->
+        <div class="border border-purple-200 rounded-xl shadow hover:shadow-lg transition p-6 flex flex-col">
+            <div class="flex-grow">
+                <h4 class="text-xl font-bold text-purple-600 mb-2">Smart Traffic Light Automation System</h4>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    An AI and IoT-based system that detects and counts vehicles using YOLO object detection across four
+                    directions.
+                    The traffic signal logic is controlled using an ESP32 microcontroller, which adjusts light timing
+                    based on traffic density to improve flow efficiency.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm">Python</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm">YOLOv8</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm">OpenCV</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm">ESP32</span>
+                </div>
+            </div>
+
+        </div> <!-- Project Card 1 -->
+        <div class="border border-purple-200 rounded-xl shadow hover:shadow-lg transition p-6 flex flex-col">
+            <div class="flex-grow">
+                <h4 class="text-xl font-bold text-purple-600 mb-2">Obstacle Avoiding Robot</h4>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    A simple autonomous robot that detects obstacles using ultrasonic sensing and changes direction
+                    automatically.
+                    Built as a hands-on robotics project to understand basic automation and sensor-based decision
+                    making.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm">Arduino</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm">Ultrasonic Sensor</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm">Servo Motor</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm">Robotics</span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <h3 class="text-2xl font-semibold text-center mt-16 mb-8">Other Projects</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- AI Chatbot -->
+        <div class="border rounded-xl p-6 shadow hover:shadow-lg transition">
+            <h4 class="text-lg font-bold text-purple-600 mb-2">
+                AI Chatbot (ChatGPT API Integration)
+            </h4>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                A conversational AI chatbot built using the ChatGPT API that generates dynamic responses based on user
+                input.
+                The project focuses on understanding API integration, prompt handling, and building interactive AI
+                applications.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">Python</span>
+                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">OpenAI API</span>
+                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">REST API</span>
+            </div>
+        </div>
+
+        <!-- Face Recognition -->
+        <div class="border rounded-xl p-6 shadow hover:shadow-lg transition">
+            <h4 class="text-lg font-bold text-purple-600 mb-2">
+                Face Recognition System (Mini Project)
+            </h4>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                A computer vision project that detects and recognizes faces from images using pre-trained models.
+                Built to explore image processing concepts and practical applications of facial recognition.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">Python</span>
+                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">OpenCV</span>
+                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">Computer Vision</span>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+</section>
+{% endblock %}
